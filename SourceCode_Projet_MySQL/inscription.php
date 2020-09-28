@@ -68,50 +68,6 @@
         <div class="container admin">
             <h2>Inscription</h2>
             <br /><br />
-<<<<<<< Updated upstream
-            <form method="POST" action="">
-                <table>
-                    <tr>
-                        <td align="right">
-                            <label for="name">Nom:</label>
-                        </td>
-                        <td >
-                            <input type="text" placeholder="Votre  nom" name="name" value="<?php if(isset($name)) { echo $name;} ?>"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <label for="mail">Mail:</label>
-                        </td>
-                        <td>
-                            <input type="email" placeholder="Votre  Mail" name="mail" value="<?php if(isset($name)) { echo $mail;} ?>"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <label for="password">Mot de passe:</label>
-                        </td>
-                        <td>
-                            <input type="password" placeholder="Votre mot de passe" name="pwd" />
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td align="right">
-                            <label for="password2">Confirmez mot de passe:</label>
-                        </td>
-                        <td>
-                            <input type="password" placeholder="Confirmez mot de passe" name="pwd2" />
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td></td>
-                        <td>
-                        <button type="submit" class="btn btn-primary" name="forminscription" value="Inscription">S'inscrire</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-=======
             <div id= "centre"> 
                 <form method="POST" action="">
 
