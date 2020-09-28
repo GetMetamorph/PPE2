@@ -105,10 +105,11 @@
                             </td>
                         </tr> 
                     </table>
-                    <input type="submit"  name="forminscription" value="Inscription">
+                    <button type="submit"  name="forminscription" value="Inscription" class="btn btn-primary"> S'inscrire </button>
+                    
                 </form>
             </div>
->>>>>>> Stashed changes
+
             <?php
             if(isset($erreur))
             {
