@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UberEat</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
     </head>
 
     <body>
         <?php
         session_start();
-            require 'admin/database.php';
+            require '../admin/database.php';
             if(isset($_POST['formconnect']))
             {
                 $mailconnect = htmlspecialchars($_POST['mailconnect']);
@@ -50,10 +50,23 @@
         <div class="container admin">
             <h2>Connexion</h2>
             <br /><br />
+            
             <form method="POST" action="">
-                <input type="text" name="mailconnect" placeholder="Mail" />
-                <input type="password" name="pwdconnect" placeholder="Mot de passe" />
-                <input type="submit" name="formconnect" value="Se connecter"  />
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" name="mailconnect" placeholder="Mail" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="password" class="form-control" name="pwdconnect" placeholder="Mot de passe" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="submit" class="form-control" name="formconnect" value="Se connecter"  />
+                    </div>
+                </div>
             </form>
             <?php
             if(isset($erreur))
@@ -65,7 +78,6 @@
                 echo '<font color="blue">'.$correct.'</font>';
             } 
             ?>
-            
         </div>
     </body>
 </html>

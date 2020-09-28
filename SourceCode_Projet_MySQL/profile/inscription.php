@@ -5,20 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UberEat</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
     </head>
 
     <body>
         <?php
-            require 'admin/database.php';
+            require '../admin/database.php';
             if (isset($_POST['forminscription']))
             {
                 $name = htmlspecialchars($_POST['name']);
                 $mail = htmlspecialchars($_POST['mail']);
-                $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT); // En mettant le password_hash , je n'arrive pas à faire la double vérification du mot de passe
+                $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
                 $pwd2 = password_hash($_POST['pwd2'], PASSWORD_DEFAULT);
                 
                 if(!empty($_POST['name']) AND !empty($_POST['mail']) AND !empty($_POST['pwd']) AND !empty($_POST['pwd2']))
@@ -41,7 +41,7 @@
                                     $statement = $db->prepare("INSERT INTO customers(name, mail, password) VALUES(?,?,?)");
                                     $statement->execute(array($name,$mail,$pwd));
                                     Database::disconnect();
-                                    $correct = "Votre compte a bien été créé   <a href=\"connexion.php\">Me connecter</a>";
+                                    $correct = "Votre compte a bien été créé   <a href=\"#\" class\"btn btn-xs btn-info\">S'inscrire <span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
                                 }
                                 else
                                 {
@@ -68,16 +68,15 @@
         <div class="container admin">
             <h2>Inscription</h2>
             <br /><br />
-            <div id= "centre"> 
+            <div id="inscription">
                 <form method="POST" action="">
-
                     <table>
                         <tr>
                             <td align="center">
                                 <label for="name">Nom:</label>
                             </td>
                             <td >
-                                <input type="text" placeholder="Votre  nom" name="name" value="<?php if(isset($name)) { echo $name;} ?>"/>
+                                <input type="text" placeholder="Votre  nom" class="form-control" name="name" value="<?php if(isset($name)) { echo $name;} ?>"/>
                             </td>
                         </tr>
                         <tr>
@@ -85,7 +84,7 @@
                                 <label for="mail">Mail:</label>
                             </td>
                             <td>
-                                <input type="email" placeholder="Votre  Mail" name="mail" value="<?php if(isset($name)) { echo $mail;} ?>"/>
+                                <input type="email" placeholder="Votre  Mail" class="form-control"name="mail" value="<?php if(isset($name)) { echo $mail;} ?>"/>
                             </td>
                         </tr>
                         <tr>
@@ -93,7 +92,7 @@
                                 <label for="password">Mot de passe:</label>
                             </td>
                             <td>
-                                <input type="password" placeholder="Votre mot de passe" name="pwd" />
+                                <input type="password" class="form-control" placeholder="Votre mot de passe" name="pwd" />
                             </td>
                         </tr> 
                         <tr>
@@ -101,15 +100,14 @@
                                 <label for="password2">Confirmez mot de passe:</label>
                             </td>
                             <td>
-                                <input type="password" placeholder="Confirmez mot de passe" name="pwd2" />
+                                <input class="form-control" type="password" placeholder="Confirmez mot de passe" name="pwd2" />
                             </td>
                         </tr> 
                     </table>
+                    <br />
                     <button type="submit"  name="forminscription" value="Inscription" class="btn btn-primary"> S'inscrire </button>
-                    
                 </form>
-            </div>
-
+        </div>
             <?php
             if(isset($erreur))
             {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
-        require 'admin/database.php';
+        require '../admin/database.php';
         if(isset($_SESSION['id']))
         {
             $db = Database::connect();
@@ -53,10 +53,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UberEat</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
     </head>
 
     <body>
@@ -72,7 +72,7 @@
                             <label for="name">Nom:</label>
                         </td>
                         <td >
-                        <input type="text" name="newname" placeholder="Nom" value="<?php echo $user['name']; ?>" /><br /><br />
+                        <input type="text" name="newname" class="form-control" placeholder="Nom" value="<?php echo $user['name']; ?>" /><br /><br />
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +80,7 @@
                             <label for="mail">Mail:</label>
                         </td>
                         <td>
-                            <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>"/><br /><br />
+                            <input type="text" name="newmail" class="form-control" placeholder="Mail" value="<?php echo $user['mail']; ?>"/><br /><br />
                         </td>
                     </tr>
                     <tr>
@@ -88,7 +88,7 @@
                             <label for="password">Mot de passe:</label>
                         </td>
                         <td>
-                        <input type="password" name="newpwd" placeholder="Mot de passe" /><br /><br />
+                        <input type="password" name="newpwd" class="form-control" placeholder="Mot de passe" /><br /><br />
                         </td>
                     </tr> 
                     <tr>
@@ -96,7 +96,7 @@
                             <label for="password2">Confirmez mot de passe:</label>
                         </td>
                         <td>
-                        <input type="password" name="newpwd2" placeholder="Confirmez votre mot de passe" /><br /><br />
+                        <input type="password" name="newpwd2" class="form-control" placeholder="Confirmez votre mot de passe" /><br /><br />
                         </td>
                     </tr> 
                     <tr>
