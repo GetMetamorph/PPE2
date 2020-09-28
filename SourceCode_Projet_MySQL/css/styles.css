@@ -1,47 +1,51 @@
-body 
-{
+body {
     background: url(../images/bg.png);
     text-align: center;
 }
-.site
-{
-    font-family: 'Holtwood One SC', sans-serif;
+
+p {
+    color: #111111;
+    font-weight: bold;
+}
+
+.site {
+    font-family: 'Fredericka the Great', cursive;
 }
 
 #logo_uber {
     width: 10%;
 }
-.center-div
-{
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  background-color: #ccc;
-  border-radius: 3px;
+
+.center-div {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 3px;
 }
-.text-logo
-{
-    font-family: 'Holtwood One SC', sans-serif;
+
+.text-logo {
+    font-family: 'Fredericka the Great', cursive;
     color: #ffffff;
     text-shadow: 2px 2px #a390b9;
     font-size: 50px;
     padding: 40px 0px;
     text-align: center;
 }
-.nav
-{
-   margin-bottom: 40px;
+
+.nav {
+    margin-bottom: 40px;
 }
-.thumbnail img
-{
-    background: #ffd301;
+
+.thumbnail img {
+    background: #5bdf4f;
 }
-.price
-{
+
+.price {
     background: #5cb85c;
-    box-shadow: 0 1px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 1px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.2);
     color: #fff;
     text-shadow: 2px 2px #333;
     position: absolute;
@@ -51,8 +55,8 @@ body
     font-size: 20px;
     border-radius: 3px;
 }
-.price:before 
-{
+
+.price:before {
     border: 4px solid transparent;
     border-bottom: 4px solid #4a934a;
     border-left: 4px solid #4a934a;
@@ -61,102 +65,130 @@ body
     right: 1px;
     top: -8px;
 }
-.caption > h4
-{
-    color: #e7480f;
+
+.caption>h4 {
+    color: #026d32;
     font-size: 18px;
 }
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
-{
-    background: #e7480f;
+
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+    font-family: 'Inter', sans-serif;
+    background: #5bdf4f;
 }
-.nav>li>a:focus, .nav>li>a:hover 
-{
-    color: #e7480f;
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    font-family: 'Inter', sans-serif;
+    color: #026d32;
     background-color: #eee;
 }
-.nav>li>a
-{
+
+.nav>li>a {
+    font-family: 'Inter', sans-serif;
     color: #eee;
     font-size: 18px;
     text-shadow: 2px 2px #333;
 }
-.btn-order
-{
+
+.btn-order {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     color: #fff;
-    background-color: #e7480f;
+    background-color: #026d32;
     text-decoration: none;
     text-shadow: 2px 2px #333;
 }
-.btn-order:hover, .btn-order:focus
-{
+
+.btn-order:hover,
+.btn-order:focus {
     color: #fff;
-    background-color: #c13c0d;
+    background-color: #5bdf4f;
 }
 
 
 /* The side navigation menu */
+
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+/* The navigation menu links */
+
+.sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
     color: #f1f1f1;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
+}
+
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-  
-  #home
-  {
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+#home {
     width: 100%;
     height: auto;
-  }
-  
+}
+
+
 /*  ADMIN */
 
-.admin
-{
+.admin {
     background: #fff;
     padding: 50px;
     border-radius: 10px;
 }
-.help-inline
-{
+
+.help-inline {
     color: red;
 }

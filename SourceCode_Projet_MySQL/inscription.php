@@ -58,13 +58,11 @@
                     {
                         $erreur = "Votre nom ne doit pas dépasser 255 caractères";
                     }
-
                 }
                 else{
                     $erreur = "Tout les champs doivent être complétés !";
                 }
             }
-
         ?>
         <br /><br />
         <div class="container admin">
@@ -107,7 +105,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit"  name="forminscription" value="Inscription">
+                        <button type="submit" class="btn btn-primary" name="forminscription" value="Inscription">S'inscrire</button>
                         </td>
                     </tr>
                 </table>
