@@ -11,8 +11,14 @@ p {
 .site {
     font-family: 'Fredericka the Great', cursive;
 }
-
-#logo_uber {
+#centre 
+{
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+#logo_uber 
+{
     width: 10%;
 }
 
