@@ -12,7 +12,9 @@
     </head>
 
     <body>
+
         <?php
+
             require '../admin/database.php';
             if (isset($_POST['forminscription']))
             {
@@ -41,7 +43,7 @@
                                     $statement = $db->prepare("INSERT INTO customers(name, mail, password) VALUES(?,?,?)");
                                     $statement->execute(array($name,$mail,$pwd));
                                     Database::disconnect();
-                                    $correct = "Votre compte a bien été créé   <a href=\"#\" class\"btn btn-xs btn-info\">S'inscrire <span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
+                                    $correct = "Votre compte a bien été créé   <a href=\"connexion.php\" class\"btn btn-xs btn-info\">S'inscrire <span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
                                 }
                                 else
                                 {
@@ -105,7 +107,7 @@
                         </tr> 
                     </table>
                     <br />
-                    <button type="submit"  name="forminscription" value="Inscription" class="btn btn-primary"> S'inscrire </button>
+                    <button type="submit"  name="forminscription" value="Inscription" class="btn btn-primary"> Se connecter </button>
                 </form>
         </div>
             <?php

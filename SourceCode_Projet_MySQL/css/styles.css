@@ -8,7 +8,16 @@ p {
     font-weight: bold;
 }
 
-.site {
+#anchornav {
+    color: white;
+}
+
+#anchornav:hover {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+a .site {
     font-family: 'Fredericka the Great', cursive;
 }
 
@@ -16,6 +25,28 @@ p {
     margin: auto;
     width: 50%;
     padding: 10px;
+}
+
+#logo {
+    color: white;
+}
+
+.navprof {
+    color: white;
+}
+
+.navprof:hover {
+    background-color: rgb(63, 63, 63);
+    color: #5cb85c;
+}
+
+.blockdark {
+    background-color: #36363f;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 #logo_uber {
@@ -75,6 +106,7 @@ p {
 .caption>h4 {
     color: #026d32;
     font-size: 18px;
+    font-family: 'Fredericka the Great', cursive;
 }
 
 .nav-pills>li.active>a,
