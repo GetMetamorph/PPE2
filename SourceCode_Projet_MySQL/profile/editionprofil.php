@@ -56,10 +56,14 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/styles.css">
     </head>
 
     <body>
+        <?php
+        require 'navprof.php';
+        ?>
     <br /><br />
         <div class="container admin">
             <h2>Edition de mon profil </h2>
@@ -72,7 +76,7 @@
                             <label for="name">Nom:</label>
                         </td>
                         <td >
-                        <input type="text" name="newname" class="form-control" placeholder="Nom" value="<?php echo $user['name']; ?>" /><br /><br />
+                        <input type="text" name="newname" class="form-control" placeholder="Nom" value="<?php echo $user['name']; ?>" />
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +84,7 @@
                             <label for="mail">Mail:</label>
                         </td>
                         <td>
-                            <input type="text" name="newmail" class="form-control" placeholder="Mail" value="<?php echo $user['mail']; ?>"/><br /><br />
+                            <input type="text" name="newmail" class="form-control" placeholder="Mail" value="<?php echo $user['mail']; ?>"/>
                         </td>
                     </tr>
                     <tr>
@@ -88,7 +92,7 @@
                             <label for="password">Mot de passe:</label>
                         </td>
                         <td>
-                        <input type="password" name="newpwd" class="form-control" placeholder="Mot de passe" /><br /><br />
+                        <input type="password" name="newpwd" class="form-control" placeholder="Mot de passe" />
                         </td>
                     </tr> 
                     <tr>
@@ -96,13 +100,13 @@
                             <label for="password2">Confirmez mot de passe:</label>
                         </td>
                         <td>
-                        <input type="password" name="newpwd2" class="form-control" placeholder="Confirmez votre mot de passe" /><br /><br />
+                        <input type="password" name="newpwd2" class="form-control" placeholder="Confirmez votre mot de passe" />
                         </td>
                     </tr> 
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" value="Mettre à jour mon profil"/><br /><br />
+                            <input type="submit" value="Mettre à jour mon profil"/>
                         </td>
                     </tr>
                 </table>

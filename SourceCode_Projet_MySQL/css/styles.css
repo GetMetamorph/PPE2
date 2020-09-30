@@ -8,6 +8,11 @@ p {
     font-weight: bold;
 }
 
+.fonttype {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
 #anchornav {
     color: white;
 }
@@ -27,12 +32,20 @@ a .site {
     padding: 10px;
 }
 
+#logoprof {
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 0;
+}
+
 #logo {
     color: white;
 }
 
 .navprof {
     color: white;
+    margin-top: 1%;
+    margin-bottom: 0;
 }
 
 .navprof:hover {
@@ -47,6 +60,8 @@ a .site {
     position: sticky;
     top: 0;
     z-index: 100;
+    margin-left: 0;
+    width: 100%;
 }
 
 #logo_uber {

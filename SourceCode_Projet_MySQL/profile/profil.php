@@ -8,12 +8,14 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/styles.css">
     </head>
 
     <body>
         <?php
         session_start();
+            require 'navprof.php';
             require '../admin/database.php';
             if(isset($_GET['id']) AND $_GET['id'] > 0)
             {
@@ -28,7 +30,7 @@
 
         <br /><br />
         <div class="container admin">
-            <h2>Profil de <?php echo $userinfo['name']; ?></h2>
+            <h2>Profil de <?php echo $userinfo['name'];?></h2>
             <br /><br />
             Nom : <?php echo $userinfo['name']; ?>
             <br />
