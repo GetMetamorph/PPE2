@@ -17,6 +17,7 @@
     
     <body>
         <?php 
+        session_start();
         require 'navmain.php';?>
         <div class="container site">
             <h1 class="text-logo">UberEat</h1>

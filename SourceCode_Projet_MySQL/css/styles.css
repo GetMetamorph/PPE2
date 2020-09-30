@@ -53,6 +53,17 @@ a .site {
     color: #5cb85c;
 }
 
+.navmain {
+    color: white;
+    margin-top: 0%;
+    margin-bottom: 0;
+}
+
+.navmain:hover {
+    background-color: rgb(63, 63, 63);
+    color: #5cb85c;
+}
+
 .blockdark {
     background-color: #36363f;
     position: -webkit-sticky;
@@ -62,6 +73,7 @@ a .site {
     z-index: 100;
     margin-left: 0;
     width: 100%;
+    font-family: 'Roboto';
 }
 
 #logo_uber {

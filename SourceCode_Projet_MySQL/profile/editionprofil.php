@@ -100,13 +100,13 @@
                             <label for="password2">Confirmez mot de passe:</label>
                         </td>
                         <td>
-                        <input type="password" name="newpwd2" class="form-control" placeholder="Confirmez votre mot de passe" />
+                        <input type="password" name="newpwd2" class="form-control" placeholder="Confirmation password" />
                         </td>
                     </tr> 
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" value="Mettre à jour mon profil"/>
+                            <button class="btn btn-primary" type="submit" >Mettre à jour mon profil</button>
                         </td>
                     </tr>
                 </table>
