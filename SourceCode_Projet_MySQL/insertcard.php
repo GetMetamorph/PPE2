@@ -23,8 +23,7 @@
             <h1 class="text-logo">UberEat</h1>
             <?php
                 
-				require 'admin/database.php';
-			 
+                require 'admin/database.php';
                 echo '<nav>
                         <ul class="nav nav-pills">';
 
@@ -57,25 +56,48 @@
                     $statement->execute(array($category['id']));
                     while ($item = $statement->fetch()) 
                     {
-                        echo '<div class="col-sm-6 col-md-4">
+                        echo '
+                        <form class="form" action="insertcard.php?id='.$_SESSION['id'].'" role="form" method="post">
+                        <div class="col-sm-6 col-md-4">
                                 <div class="thumbnail">
                                     <img src="images/' . $item['image'] . '" alt="...">
                                     <div class="price">' . number_format($item['price'], 2, '.', ''). ' €</div>
                                     <div class="caption">
                                         <h4>' . $item['name'] . '</h4>
                                         <p>' . $item['description'] . '</p>
-                                        <a href="#" class="btn btn-order" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Commander</a>
+                                        <button type="submit"  name="itemVal" value="'.$item['id'].'"  class="btn btn-order"><span class="glyphicon glyphicon-shopping-cart"></span> Commander </button>
                                     </div>
                                 </div>
-                            </div>';
+                            </div>
+                            </form>';
+                            
                     }
-                   
+
                    echo    '</div>
                         </div>';
                 }
                 Database::disconnect();
                 echo  '</div>';
             ?>
+<?php
+
+    $customerId = $_SESSION['id'];
+    $itemId     = $_POST['itemVal'];
+    if (isset($customerId, $itemId)){
+        echo $customerId.'<br />';
+        echo $itemId;
+        echo "<h1>Je suis dans la boucle</h1>";
+        $db         = Database::connect();
+        $statement  = $db->prepare('INSERT INTO cart (cus_id, item_id) VALUES (?, ?)');
+        $statement->execute(array((int) $customerId, (int) $itemId));
+        $id = $db->lastInsertId();
+        echo $id;
+        Database::disconnect();
+    }
+    else{
+        echo "les variables sont vides";
+    }
+?>
         </div>
     </body>
 </html>
