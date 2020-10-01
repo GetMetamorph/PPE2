@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,9 +23,7 @@
         <div class="container site">
             <h1 class="text-logo">UberEat</h1>
             <?php
-                
 				require 'admin/database.php';
-			 
                 echo '<nav>
                         <ul class="nav nav-pills">';
 
@@ -56,18 +55,28 @@
                     $statement = $db->prepare('SELECT * FROM items WHERE items.category = ?');
                     $statement->execute(array($category['id']));
                     while ($item = $statement->fetch()) 
-                    {
-                        echo '<div class="col-sm-6 col-md-4">
-                                <div class="thumbnail">
-                                    <img src="images/' . $item['image'] . '" alt="...">
-                                    <div class="price">' . number_format($item['price'], 2, '.', ''). ' €</div>
-                                    <div class="caption">
-                                        <h4>' . $item['name'] . '</h4>
-                                        <p>' . $item['description'] . '</p>
-                                        <a href="#" class="btn btn-order" role="button"><span class="glyphicon glyphicon-shopping-cart"></span> Commander</a>
+                    {   
+                        if (isset($_SESSION['id']))
+                        {
+                            echo '<form class="form" action="index.php?id='.$_SESSION['id'].'" role="form" method="post">';
+                        }
+                        else
+                        {
+                            echo '<form class="form" action="profile/connexion.php" role="form" method="post">';
+                        }
+
+                        echo   '<div class="col-sm-6 col-md-4">
+                                    <div class="thumbnail">
+                                        <img src="images/' . $item['image'] . '" alt="...">
+                                        <div class="price">' . number_format($item['price'], 2, '.', ''). ' €</div>
+                                        <div class="caption">
+                                            <h4>' . $item['name'] . '</h4>
+                                            <p>' . $item['description'] . '</p>
+                                            <button type="submit"  name="itemVal" value="'.$item['id'].'"  class="btn btn-order"><span class="glyphicon glyphicon-shopping-cart"></span> Commander </button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>';
+                            </div>
+                        </form>';
                     }
 
                    echo    '</div>
@@ -75,7 +84,17 @@
                 }
                 Database::disconnect();
                 echo  '</div>';
+
+                if (isset($_SESSION['id'], $_POST['itemVal'])){
+                    $customerId = $_SESSION['id'];
+                    $itemId     = $_POST['itemVal'];
+                    $db         = Database::connect();
+                    $statement  = $db->prepare('INSERT INTO cart (cus_id, item_id) VALUES (?, ?)');
+                    $statement->execute(array((int) $customerId, (int) $itemId));
+                    Database::disconnect();
+                }
             ?>
         </div>
     </body>
+    
 </html>

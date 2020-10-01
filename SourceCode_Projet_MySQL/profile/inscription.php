@@ -14,6 +14,7 @@
     <body>
         <?php
             require '../admin/database.php';
+            require 'navprof.php';
             if (isset($_POST['forminscription']))
             {
                 $name = htmlspecialchars($_POST['name']);
@@ -41,7 +42,9 @@
                                     $statement = $db->prepare("INSERT INTO customers(name, mail, password) VALUES(?,?,?)");
                                     $statement->execute(array($name,$mail,$pwd));
                                     Database::disconnect();
-                                    $correct = "Votre compte a bien été créé   <a href=\"#\" class\"btn btn-xs btn-info\">Se connecter<span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
+                                    $correct = "<div class=\"alert alert-primary\" role=\"alert\">
+                                    Votre compte a bien été créé   <a href=\"connexion.php\" class\"btn btn-xs btn-info\">Se connecter<span class=\"glyphicon glyphicon-arrow-right\"></span></a>
+                                                </div>";
                                 }
                                 else
                                 {

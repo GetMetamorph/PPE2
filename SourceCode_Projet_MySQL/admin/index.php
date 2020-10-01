@@ -15,7 +15,7 @@
         <h1 class="text-logo">UberEat </h1>
         <div class="container admin">
             <div class="row">
-                <h1><strong>Liste des items   </strong><a href="insert.php" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Ajouter</a></h1>
+                <h1><strong>Liste des articles   </strong><a href="insert.php" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Ajouter</a></h1>
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>

@@ -3,7 +3,7 @@ if(isset($_SESSION['id'])){
 echo '
     <div class="row blockdark fonttype align-items-center">
         <div class="col-1" id="logoprof">
-            <h3><a href="../insertcard.php?id='.$_SESSION['id'].'" id=\'anchornav\'>UberEat</a></h3>
+            <h3><a href="../index.php?id='.$_SESSION['id'].'" id=\'anchornav\'>UberEat</a></h3>
         </div>
 
         <div class="col-2 offset-3 navprof">
@@ -11,7 +11,7 @@ echo '
         </div>
 
         <div class="col-2 navprof">
-            <h4>Panier</h4>
+            <h4><a href="../panier.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Panier</a></h4>
         </div>
 
         <div class="col-2 navprof">

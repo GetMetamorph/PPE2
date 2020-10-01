@@ -3,7 +3,7 @@
         echo'
         <div class="row blockdark fonttype">
             <div class="col-md-1" id="logo">
-                <h3><a href="index.php"id=\'anchornav\'>UberEat </a></h3>
+                <h3><a href="index.php?id='.$_SESSION['id'].'"id=\'anchornav\'>UberEat </a></h3>
             </div>
 
             <div class="col-md-3">
@@ -14,11 +14,11 @@
             </div>
 
             <div class="col-md-2 navmain">
-                <h3>Panier</h3>
+                <h3><a href="../panier.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Panier</a></h3>
             </div>
 
             <div class="col-md-2 navmain">
-                <h3><a href="profile/profil.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Mon profil</h3></a>
+                <h3><a href="profile/profil.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Mon profil</a></h3>
             </div>
 
             <div class="col-md-2 navmain">

@@ -59,18 +59,21 @@
             
             <form method="POST" action="">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-4"></div>
+                    <div class="col-md-4 ">
                         <input type="text" class="form-control" name="mailconnect" placeholder="Mail" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                <div class="col-4"></div>
+                    <div class="col-md-4">
                         <input type="password" class="form-control" name="pwdconnect" placeholder="Mot de passe" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <input type="submit" class="form-control" name="formconnect" value="Se connecter"  />
+                <div class="col-4"></div>
+                    <div class="col-4">
+                        <input type="submit" class="form-control btn btn-primary" name="formconnect" value="Se connecter"  />
                     </div>
                 </div>
             </form>
