@@ -8,14 +8,11 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/styles.css">
     </head>
 
     <body>
-
         <?php
-            require 'navprof.php';
             require '../admin/database.php';
             if (isset($_POST['forminscription']))
             {
@@ -44,7 +41,7 @@
                                     $statement = $db->prepare("INSERT INTO customers(name, mail, password) VALUES(?,?,?)");
                                     $statement->execute(array($name,$mail,$pwd));
                                     Database::disconnect();
-                                    $correct = "Votre compte a bien été créé   <a href=\"connexion.php\" class\"btn btn-xs btn-info\">S'inscrire <span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
+                                    $correct = "Votre compte a bien été créé   <a href=\"#\" class\"btn btn-xs btn-info\">Se connecter. <span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
                                 }
                                 else
                                 {
@@ -108,7 +105,7 @@
                         </tr> 
                     </table>
                     <br />
-                    <button type="submit"  name="forminscription" value="Inscription" class="btn btn-primary"> Se connecter </button>
+                    <button type="submit"  name="forminscription" value="Inscription" class="btn btn-primary"> S'inscrire </button>
                 </form>
         </div>
             <?php
