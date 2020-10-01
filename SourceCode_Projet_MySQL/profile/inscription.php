@@ -41,7 +41,7 @@
                                     $statement = $db->prepare("INSERT INTO customers(name, mail, password) VALUES(?,?,?)");
                                     $statement->execute(array($name,$mail,$pwd));
                                     Database::disconnect();
-                                    $correct = "Votre compte a bien été créé   <a href=\"#\" class\"btn btn-xs btn-info\">Se connecter. <span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
+                                    $correct = "Votre compte a bien été créé   <a href=\"#\" class\"btn btn-xs btn-info\">Se connecter<span class=\"glyphicon glyphicon-arrow-right\"></span></a>";
                                 }
                                 else
                                 {
