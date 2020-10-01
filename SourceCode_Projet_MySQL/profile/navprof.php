@@ -2,8 +2,11 @@
 if(isset($_SESSION['id'])){
   echo '
     <div class="row blockdark fonttype align-items-center">
-    <div class="col-2" id="logoprof">
+    <div class="col-1" id="logoprof">
         <h3><a href="'.dirname("../index.php").'" id=\'anchornav\'>UberEat</a></h3>
+    
+    </div>
+    <div class="col-1">
     </div>
 
     <div class="col-2 offset-2 navprof">
