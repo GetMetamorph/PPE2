@@ -24,22 +24,26 @@
                 if(!empty($mailconnect) AND !empty($pwdconnect))
                 {
                     $db = Database::connect();
-                    $statement = $db->prepare("SELECT * FROM customers WHERE mail = ? AND password = ?");
-                    $statement->execute(array($mailconnect, $pwdconnect ));
+                    $statement = $db->prepare("SELECT * FROM customers WHERE mail = ?");
+                    $statement->execute(array($mailconnect ));
                     $userexist =  $statement->rowCount();
                     if($userexist == 1)
                     {
                         $userinfo = $statement->fetch();
-                        $_SESSION['id'] = $userinfo['id'];
-                        $_SESSION['pseudo'] = $userinfo['pseudo'];
-                        $_SESSION['mail'] = $userinfo['mail'];
-                        header("Location: profil.php?id=".$_SESSION['id']);
-                        $correct = "Vous allez être redirigé";
+                        if(password_verify($pwdconnect, $userinfo['password'])){
+                           
+                            $_SESSION['id'] = $userinfo['id'];
+                            $_SESSION['pseudo'] = $userinfo['pseudo'];
+                            $_SESSION['mail'] = $userinfo['mail'];
+                            header("Location: profil.php?id=".$_SESSION['id']);
+                            $correct = "Vous allez être redirigé";
+                        }
+                        else
+                        {
+                            $erreur = "Mauvais mot de passe.";
+                        }
                     }
-                    else
-                    {
-                        $erreur = "Mauvais mail ou mot de passe.";
-                    }
+
                     Database::disconnect();
                 }
                 else{

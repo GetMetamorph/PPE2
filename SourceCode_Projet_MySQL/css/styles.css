@@ -146,8 +146,8 @@ a .site {
 .nav>li>a:focus,
 .nav>li>a:hover {
     font-family: 'Inter', sans-serif;
-    color: #026d32;
-    background-color: #eee;
+    color: white;
+    background-color: rgb(34, 109, 31);
 }
 
 .nav>li>a {

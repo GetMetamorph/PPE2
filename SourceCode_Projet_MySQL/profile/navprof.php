@@ -1,12 +1,14 @@
 <?php
+
+echo '
+<div class="row blockdark fonttype align-items-center">
+<div class="col-1" id="logoprof">
+    <h3><a href="../index.php" id=\'anchornav\'>UberEat</a></h3>
+</div>';
+
 if(isset($_SESSION['id'])){
   echo '
-    <div class="row blockdark fonttype align-items-center">
-    <div class="col-2" id="logoprof">
-        <h3><a href="'.dirname("../index.php").'" id=\'anchornav\'>UberEat</a></h3>
-    </div>
-
-    <div class="col-2 offset-2 navprof">
+    <div class="col-2 offset-3 navprof">
         <h4>Historique</h4>
     </div>
 
@@ -15,7 +17,7 @@ if(isset($_SESSION['id'])){
     </div>
 
     <div class="col-2 navprof">
-        <h4>Mon profil</h4>
+        <h4><a href="profil.php" id=\'anchornav\'>Mon profil</a></h4>
     </div>
 
     <div class="col-2 navprof">
@@ -25,12 +27,8 @@ if(isset($_SESSION['id'])){
 }
 else{
   echo '
-  <div class="row blockdark fonttype align-items-center">
-  <div class="col-2" id="logoprof">
-      <h3><a href="index.php"id=\'anchornav\'>UberEat</a></h3>
-  </div>
 
-  <div class="col-2 offset-6 navprof">
+  <div class="col-2 offset-7 navprof">
       <h4><a href="inscription.php"id=\'anchornav\'>S\'inscrire</h4></a>
   </div>
 
