@@ -16,7 +16,7 @@
         header("Location: index.php"); 
     }
 
-    function checkInput($data) 
+    function checkInput($data)
     {
       $data = trim($data);
       $data = stripslashes($data);

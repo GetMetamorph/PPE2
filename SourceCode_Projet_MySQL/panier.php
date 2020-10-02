@@ -35,7 +35,7 @@ require 'navmain.php';
                   session_start();
                   require 'admin/database.php';
                   $db = Database::connect();
-                  $statement = $db->query('SELECT items.id, items.name, items.price, categories.name AS category FROM cart INNER JOIN items ON cart.item_id = items.id INNER JOIN customers ON cart.cus_id = customers.id LEFT JOIN categories ON items.category = categories.id WHERE customers.id='.$_SESSION['id'].' ORDER BY items.id DESC');
+                  $statement = $db->query('SELECT items.id, items.name, items.price, categories.name AS category FROM cart INNER JOIN items ON cart.item_id = items.id INNER JOIN customers ON cart.cus_id = customers.id LEFT JOIN categories ON items.category = categories.id WHERE customers.id='.$_SESSION['id'].' ORDER BY items.id ASC');
                   while($item = $statement->fetch()) 
                   {
                       echo '<tr>';
@@ -43,7 +43,7 @@ require 'navmain.php';
                       echo '<td>'. number_format($item['price'], 2, '.', '') . '</td>';
                       echo '<td>'. $item['category'] . '</td>';
                       echo '<td width=300>';
-                      echo '<a class="btn btn-danger" href="delete.php?id='.$item['id'].'"><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
+                      echo '<a class="btn btn-danger fonttype" href="delpanier.php?item='.$item['id'].'&id='.$_SESSION['id'].'"><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
                       echo '</td>';
                       echo '</tr>';
                   }
@@ -51,6 +51,7 @@ require 'navmain.php';
                 ?>
             </tbody>
         </table>
+    </div>
 </body>
 
 </html>

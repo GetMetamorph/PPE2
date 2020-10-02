@@ -14,7 +14,7 @@
             </div>
 
             <div class="col-md-2 navmain">
-                <h3><a href="../panier.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Panier</a></h3>
+                <h3><a href="panier.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Panier</a></h3>
             </div>
 
             <div class="col-md-2 navmain">
