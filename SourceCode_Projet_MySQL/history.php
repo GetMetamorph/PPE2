@@ -20,7 +20,7 @@ require 'navmain.php';
 ?>
     <br /><br />
     <div class="container admin">
-        <h2>Panier</h2>
+        <h2>Historique des commandes</h2>
         <br /><br />
         <table class="table table-striped table-bordered">
             <thead>
@@ -36,7 +36,7 @@ require 'navmain.php';
                   require 'admin/database.php';
                   $total = 0;
                   $db = Database::connect();
-                  $statement = $db->query('SELECT items.id, items.name, items.price, categories.name AS category FROM history INNER JOIN items ON history.item_id = items.id INNER JOIN customers ON history.cus_id = customers.id LEFT JOIN categories ON items.category = categories.id WHERE customers.id='.$_SESSION['id'].' ORDER BY items.id ASC');
+                  $statement = $db->query('SELECT items.id, items.name, items.price, history.date, categories.name AS category FROM history INNER JOIN items ON history.item_id = items.id INNER JOIN customers ON history.cus_id = customers.id LEFT JOIN categories ON items.category = categories.id WHERE customers.id='.$_SESSION['id'].' ORDER BY items.id ASC');
                   while($item = $statement->fetch()) 
                   {
                       echo '<tr>';
@@ -44,19 +44,14 @@ require 'navmain.php';
                       echo '<td>'. number_format($item['price'], 2, '.', '') . '</td>';
                       echo '<td>'. $item['category'] . '</td>';
                       echo '<td width=300>';
-                      //echo la date ici
+                      echo $item['date'];
                       echo '</td>';
-                      echo '</tr>';
-                      $total = $total + $item['price'];
                   }
                   Database::disconnect();
                 ?>
             </tbody>
         </table>
         <br />
-        <?php
-        echo '<p>Total : '.number_format($total, 2, '.', '').'€ </p>'
-        ?>
     </div>
 </body>
 
