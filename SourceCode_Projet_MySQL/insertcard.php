@@ -84,9 +84,6 @@
     $customerId = $_SESSION['id'];
     $itemId     = $_POST['itemVal'];
     if (isset($customerId, $itemId)){
-        echo $customerId.'<br />';
-        echo $itemId;
-        echo "<h1>Je suis dans la boucle</h1>";
         $db         = Database::connect();
         $statement  = $db->prepare('INSERT INTO cart (cus_id, item_id) VALUES (?, ?)');
         $statement->execute(array((int) $customerId, (int) $itemId));

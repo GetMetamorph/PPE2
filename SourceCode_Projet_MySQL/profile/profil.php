@@ -41,7 +41,7 @@
             {
             ?>
             <a href="editionprofil.php">Editer mon profil</a>
-            <a href="deconexion.php">Se déconnecter</a>
+            <a href="deconnexion.php">Se déconnecter</a>
             <?php
             }
             ?>

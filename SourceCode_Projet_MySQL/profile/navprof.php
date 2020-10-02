@@ -7,7 +7,7 @@ echo '
         </div>
 
         <div class="col-2 offset-3 navprof">
-            <h4>Historique</h4>
+            <h4><a href="../history.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Historique</a></h4>
         </div>
 
         <div class="col-2 navprof">

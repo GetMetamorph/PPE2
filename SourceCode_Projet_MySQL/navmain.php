@@ -10,7 +10,7 @@
             </div>
 
             <div class="col-md-2 navmain">
-                <h3>Historique</h3>
+                <h3><a href="history.php?id='.$_SESSION['id'].'" id=\'anchornav\'>Historique</a></h3>
             </div>
 
             <div class="col-md-2 navmain">

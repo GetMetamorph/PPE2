@@ -28,7 +28,7 @@ require 'navmain.php';
                     <th>Nom</th>
                     <th>Prix</th>
                     <th>Catégorie</th>
-                    <th>Retirer article</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +36,7 @@ require 'navmain.php';
                   require 'admin/database.php';
                   $total = 0;
                   $db = Database::connect();
-                  $statement = $db->query('SELECT items.id, items.name, items.price, categories.name AS category FROM cart INNER JOIN items ON cart.item_id = items.id INNER JOIN customers ON cart.cus_id = customers.id LEFT JOIN categories ON items.category = categories.id WHERE customers.id='.$_SESSION['id'].' ORDER BY items.id ASC');
+                  $statement = $db->query('SELECT items.id, items.name, items.price, categories.name AS category FROM history INNER JOIN items ON history.item_id = items.id INNER JOIN customers ON history.cus_id = customers.id LEFT JOIN categories ON items.category = categories.id WHERE customers.id='.$_SESSION['id'].' ORDER BY items.id ASC');
                   while($item = $statement->fetch()) 
                   {
                       echo '<tr>';
@@ -44,7 +44,7 @@ require 'navmain.php';
                       echo '<td>'. number_format($item['price'], 2, '.', '') . '</td>';
                       echo '<td>'. $item['category'] . '</td>';
                       echo '<td width=300>';
-                      echo '<a class="btn btn-danger fonttype" href="delpanier.php?item='.$item['id'].'&id='.$_SESSION['id'].'"><span class="glyphicon glyphicon-remove"></span> Supprimer</a>';
+                      //echo la date ici
                       echo '</td>';
                       echo '</tr>';
                       $total = $total + $item['price'];
@@ -54,27 +54,8 @@ require 'navmain.php';
             </tbody>
         </table>
         <br />
-        <?php  
-        
-        echo '<p>Total : '.number_format($total, 2, '.', '').'€ </p>
-        <br />
-        <form class="form" action="panier.php?id='.$_SESSION['id'].'" role="form" method="post">
-        <button type="submit" type="submit" class="form-control btn btn-primary col-3" name="paiement" value="'.$_SESSION['id'].'"  />Valider ma commande</button>
-        </form>
-        ';
-        if (isset($_POST['paiement']))
-        {
-            $db = Database::connect();
-            $cusId = $_SESSION['id'];
-            $statement = $db->prepare("SET @p0=?; CALL `PS_ValidCart`(@p0);");
-            $statement->execute(array((int) $cusId));
-            echo '<h1> DANS LE IF '.$cusId.'<h1>';
-            Database::disconnect();
-            header("Location: history.php");
-        }
-        else{
-            echo '<h1>DANS LE ELSE </h1>';
-        }
+        <?php
+        echo '<p>Total : '.number_format($total, 2, '.', '').'€ </p>'
         ?>
     </div>
 </body>
