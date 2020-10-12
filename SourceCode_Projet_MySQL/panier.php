@@ -72,9 +72,7 @@ require 'navmain.php';
             Database::disconnect();
             header("Location: history.php");
         }
-        else{
-            echo '<h1>DANS LE ELSE </h1>';
-        }
+
         ?>
     </div>
 </body>
